@@ -1,3 +1,5 @@
+system("cls") || system("clear")
+
 loop do
   leaderboard = []
   player = []
@@ -12,6 +14,7 @@ loop do
   age = rand (1..10)
   tries = 7
   puts "Guess a number! Im thingking between 1 - 10, take a guess :)"
+  puts "Answer Is = #{age}"
   guess = gets.chomp
 
    if guess.to_i == age
@@ -28,7 +31,6 @@ loop do
    puts "congratulation!! #{name}. Your are correct"
  else puts "Best of Luck! try again! "
  end
- end
 
   if guess.to_i == age && (attempt < 7)
   puts "congratulation!! #{name}. Your are correct"
@@ -42,3 +44,4 @@ puts "="*100
   puts "List Of Player"
   puts name
   end
+end
