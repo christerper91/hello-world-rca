@@ -27,7 +27,7 @@ def show_leaderboard
 
 end
 
-
+loop do
 puts main_menu
 player = []
 name = gets.chomp
@@ -65,8 +65,23 @@ guess = gets.chomp
 end
 
 if guess.to_i == age && (attempt < 7)
-puts "congratulation!! #{name}. Your are correct"
+  puts "="*100
+  puts "congratulation!! #{name}. Your are correct"
+  puts "="*100
+  puts "Press 'n' if you want continue as a new player"
+  puts "Press 'c'if you want continue as same player"
+  puts "Press 'x' if you want to exit"
+  puts show_leaderboard
 
 else
-puts "sorry you have run out of attempt :/ "
+  puts "="*100
+  puts "sorry you have run out of attempt :/ "
+  puts "="*100
+  puts "Press 'n' if you want continue as a new player"
+  puts "Press 'c'if you want continue as same player"
+  puts "Press 'x' if you want to exit"
+end
+
+option = gets.chomp
+system("cls") || system("clear")
 end
