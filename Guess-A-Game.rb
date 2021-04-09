@@ -28,7 +28,7 @@ def play_game(name, scores)
     puts "congratulation!! #{name}. Your are correct"
     show_leaderboard(name, scores)
   else
-    puts "Sory Try Again! Attempt left #{tries - attempt}"
+    puts "Sory Try Again! Attempt left"
   end
 
 
@@ -82,18 +82,21 @@ def print_menu(name, scores)
   puts "3. Print Menu"
   puts "="*100
   option = gets.chomp
-  system("cls") || system("clear")
-  if option.to_i != 1
-    puts "Sory Wrong Input, Choose Option 1, 2 or 3 ONLY!"
+  if option.to_i == 1
+    play_game(name, scores)
+  elsif option.to_i == 2
+    show_leaderboard(name, scores)
+  elsif option.to_i == 3
+    print_menu(name, scores)
   else
-    puts play_game(name, scores)
+    puts "Sory Wrong Input, Choose Option 1, 2, 3 ONLY!"
   end
+
 end
 
 def separator
   "="*100
 end
 scores = {}
-loop do
-  main(scores)
-end
+
+main(scores)
