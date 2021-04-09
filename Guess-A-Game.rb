@@ -15,6 +15,7 @@ def main(scores)
 end
 
 def play_game(name, scores)
+  system("cls") || system("clear")
   puts "Lets Guess A Number Between 1 - 10"
 
   age = rand (1..10)
@@ -87,6 +88,9 @@ def print_menu(name, scores)
   elsif option.to_i == 2
     show_leaderboard(name, scores)
   elsif option.to_i == 3
+    system("cls") || system("clear")
+    puts "="*100
+    puts "Welcome Aboard #{name}, Select Your Option 1 - 3"
     print_menu(name, scores)
   else
     puts "Sory Wrong Input, Choose Option 1, 2, 3 ONLY!"
