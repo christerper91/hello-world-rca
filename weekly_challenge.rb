@@ -14,19 +14,18 @@ def price_enter
   arr = []
   puts "You Can Now Start Enter Price Of Each Item"
   while price = gets.chomp
-    if price == "x"
-      break
+    if price != "x"
+      puts "item price entered RM%0.2f" % [price]
+      arr << price.to_i
+      sum = arr.inject(:+)
+      puts "total RM%0.2f" % [sum]
     else
-    puts "item price entered RM%0.2f" % [price]
-    arr << price.to_i
-    sum = arr.inject(:+)
-    puts "total RM%0.2f" % [sum]
+      puts "Check Out Final total RM%0.2f" % [sum]
   end
 end
 end
 
-def check_out
-end
+
 
 def payment
   puts "ds"
