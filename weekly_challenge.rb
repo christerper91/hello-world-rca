@@ -49,6 +49,9 @@ def balance_payment
       arr << payment.to_i
     else
       puts "Thank you for your payment. Here is your balance RM#{payment - @sum}"
+      puts "Enter To Start New Customer"
+      gets.chomp
+      main
     end
   end
 
