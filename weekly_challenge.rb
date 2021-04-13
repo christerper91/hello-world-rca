@@ -34,6 +34,7 @@ def discount
       puts " you entered invalid voucher"
     else
       puts " your final amount after discount 20% RM#{@sum - (@sum*20/100)}"
+      @sum_discount = @sum - (@sum*20/100)
       balance_payment
     end
   end
@@ -43,12 +44,12 @@ def balance_payment
   arr = []
   puts "Enter YOur payment - amount To pay (must greater than 0 & total amount to pay)"
   payment = gets.chomp.to_i
-  (payment != @sum) && (payment < @sum)
-    if payment.to_i < @sum
+  (payment != @sum_discount) && (payment < @sum_discount)
+    if payment.to_i < @sum_discount
       puts " your entered money not enough to pay"
       arr << payment.to_i
     else
-      puts "Thank you for your payment. Here is your balance RM#{payment - @sum}"
+      puts "Thank you for your payment. Here is your balance RM#{payment - @sum_discount}"
       puts "Enter To Start New Customer"
       gets.chomp
       main
